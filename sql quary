@@ -1,0 +1,4 @@
+ELECT v.vehicle_id, v.make, v.model, v.battery_capacity
+FROM vehicles v
+LEFT JOIN bookings b ON v.vehicle_id = b.vehicle_id
+WHERE b.booking_id IS NULL
