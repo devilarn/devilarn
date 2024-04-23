@@ -1,0 +1,14 @@
+EVBookingSystem/
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       └── com/
+│   │           └── yourcompany/
+│   │               └── evbookingsystem/
+│   │                   ├── model/
+│   │                   │   └── EV.java
+│   │                   ├── repository/
+│   │                   │   └── EVRepository.java
+│   │                   └── Main.java
+│   └── resources/
+└── pom.xml
