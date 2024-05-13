@@ -1,0 +1,38 @@
+package abhi.com.EVBOOKINGSYSTEM;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
+
+public class vehicle 
+{
+
+	import javax.persistence.*;
+
+	@Entity
+	@Table(name = "users")
+	public class User 
+	{
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
+
+	    private String username;
+	    private String email;
+	    // Other fields, constructors, getters, and setters
+	}
+
+	@Entity
+	@Table(name = "vehicles")
+	public class Vehicle 
+	{
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
+
+	    private String model;
+	    private String registrationNumber;
+	    // Other fields, constructors, getters, and setters
+	}
+
