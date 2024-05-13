@@ -1,0 +1,27 @@
+package abhi.com.EVBOOKINGSYSTEM;
+import javax.persistence.*;
+@Entity
+@Table(name = "bookings")
+public class Booking 
+{
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
+
+	    @ManyToOne
+	    @JoinColumn(name = "user_id")
+	    private User user;
+
+	    @ManyToOne
+	    @JoinColumn(name = "vehicle_id")
+	    private Vehicle vehicle;
+
+	    @OneToOne(mappedBy = "booking", cascade = CascadeType.ALL)
+	    private Payment payment;
+
+	    private LocalDateTime startTime;
+	    private LocalDateTime endTime;
+	    // Other fields, constructors, getters, and setters
+	}
+
+}
