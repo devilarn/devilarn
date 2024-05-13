@@ -1,0 +1,25 @@
+package abhi.com.EVBOOKINGSYSTEM;
+
+public class BookingService 
+{
+	private BookingDao bookingDao;
+    private PaymentDao paymentDao;
+
+    public BookingService(BookingDao bookingDao, PaymentDao paymentDao) 
+    {
+        this.bookingDao = bookingDao;
+        this.paymentDao = paymentDao;
+    }
+
+    public void makeBooking(User user, Vehicle vehicle, LocalDateTime startTime, LocalDateTime endTime, double amount) 
+    {
+        Booking booking = new Booking(user, vehicle, startTime, endTime);
+        Payment payment = new Payment(booking, amount, LocalDateTime.now());
+        
+        booking.setPayment(payment);
+        
+        bookingDao.saveOrUpdate(booking);
+        paymentDao.saveOrUpdate(payment);
+    }
+    // Other methods
+}
