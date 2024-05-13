@@ -1,0 +1,21 @@
+package abhi.com.EVBOOKINGSYSTEM;
+
+import javax.persistence.*;
+@Entity
+@Table(name = "payments")
+public class Payment 
+{
+	 @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
+
+	    @ManyToOne
+	    @JoinColumn(name = "booking_id")
+	    private Booking booking;
+
+	    private double amount;
+	    private LocalDateTime paymentTime;
+	    // Other fields, constructors, getters, and setters.
+	
+	
+}
